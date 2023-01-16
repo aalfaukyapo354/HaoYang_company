@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.clearfix, .c {
+    zoom: 1;
+    clear: both;
+}
+.clearfix:after, .clearfix:before, .c:after, .c:before {
+    display: table;
+    content: "";
+}
+.clearfix:after, .c:after {
+    clear: both;
+}
+/* Write your styles */
+.l {
+    float: left;
+}
+.r {
+    float: right;
+}
+.box {
+    width: 1200px;
+    margin: 0 auto;
+}
