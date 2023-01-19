@@ -19,8 +19,9 @@ def hangyexinwen():
 # 新闻资讯/行业新闻/具体新闻
 @mod.route('/hangyexinwen/<page>/')
 def hangyexinwen_int(page):
-    neirong = DocToHtml('HaoyangFlask/static/uploads/2020年述职报告.docx')
-    return render_template(f'xinwenzixun/hangyexinwen/'+str(page), neirong=neirong)
+    content = DocToHtml('HaoyangFlask/static/uploads/'+str(page).replace('.html', '')+'.docx')
+    content.run()
+    return render_template('xinwenzixun/hangyexinwen/jutixinwen.vue', content=content.soup)
 
 
 # 新闻资讯/公司动态
@@ -32,4 +33,9 @@ def gongsidongtai():
 # 新闻资讯/公司动态/具体新闻
 @mod.route('/gongsidongtai/<page>/')
 def gongsidongtai_int(page):
-    return render_template(f'xinwenzixun/gongsidongtai/'+str(page))
+    content = DocToHtml('HaoyangFlask/static/uploads/'+str(page).replace('.html', '')+'.docx')
+    content.run()
+    return render_template('xinwenzixun/hangyexinwen/jutixinwen.vue', content=content.soup)
+
+
+

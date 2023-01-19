@@ -1,6 +1,7 @@
 
 from pydocx import PyDocX
 from bs4 import BeautifulSoup
+from lxml import etree
 import os
 
 # 默认style
@@ -32,25 +33,28 @@ class DocToHtml:
         self.soup.style.append(init_style)
         # 格式化代码，自动补全代码
         self.soup.prettify()
-        self.soup = self.soup.body
+        # 解析html
+        self.soup = self.soup.find('body').decode_contents()
+        # self.soup = self.soup.body()
 
 
-    # 生成html文件
-    def save_html(self):
-        filename = os.path.basename(self.file)
-        filename = filename.split('.')[0]
-        path = os.path.dirname(self.file)
-        print(os.path.dirname(self.file))
-        f = open(path + '/' + filename+'.html', 'w', encoding="utf-8")
-        f.write(str(self.soup))
-        f.close()
+    # # 生成html文件
+    # def save_html(self):
+    #     filename = os.path.basename(self.file)
+    #     filename = filename.split('.')[0]
+    #     path = os.path.dirname(self.file)
+    #     print(os.path.dirname(self.file))
+    #     f = open(path + '/' + filename+'.html', 'w', encoding="utf-8")
+    #     f.write(str(self.soup))
+    #     f.close()
 
     def run(self):
         self.get_doc_content()
         self.update_html()
-        self.save_html()
+        # self.save_html()
+        return self.soup
 
 
 if __name__=='__main__':
-    d = DocToHtml('HaoyangFlask/static/uploads/2020年述职报告.docx')
+    d = DocToHtml('HaoyangFlask/static/uploads/14.docx')
     d.run()

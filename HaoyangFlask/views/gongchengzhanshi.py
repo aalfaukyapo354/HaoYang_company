@@ -9,31 +9,31 @@ def index():
     return render_template('gongchengzhanshi/gongchengzhanshi.html')
 
 
-# 工程展示/房屋结构
-@mod.route('/fangwujiegou/')
-def fangwujiegou():
-    return render_template('gongchengzhanshi/fangwujiegou.html')
+# 工程展示/隧道工程
+@mod.route('/suidaogongcheng/')
+def suidaogongcheng():
+    return render_template('gongchengzhanshi/suidaogongcheng.html')
 
 
-# 工程展示/市政公路
-@mod.route('/shizhenggonglu/')
-def shizhenggonglu():
-    return render_template('gongchengzhanshi/shizhenggonglu.html')
+# 工程展示/高速公路
+@mod.route('/gaosugonglu/')
+def gaosugonglu():
+    return render_template('gongchengzhanshi/gaosugonglu.html')
 
 
-# 工程展示/机电安装
-@mod.route('/jidiananzhuang/')
-def jidiananzhuang():
-    return render_template('gongchengzhanshi/jidiananzhuang.html')
+# 工程展示/桥梁工程
+@mod.route('/qiaolianggongcheng/')
+def qiaolianggongcheng():
+    return render_template('gongchengzhanshi/qiaolianggongcheng.html')
 
 
-# 工程展示/装饰装修
-@mod.route('/zhuangshizhuangxiu/')
-def zhuangshizhuangxiu():
-    return render_template('gongchengzhanshi/zhuangshizhuangxiu.html')
+# 工程展示/地下管廊
+@mod.route('/dixiaguanlang/')
+def dixiaguanlang():
+    return render_template('gongchengzhanshi/dixiaguanlang.html')
 
 
-# 工程展示/钢结构
-@mod.route('/gangjiegou/')
-def gangjiegou():
-    return render_template('gongchengzhanshi/gangjiegou.html')
+# 工程展示/房屋建筑
+@mod.route('/fangwujianzhu/')
+def fangwujianzhu():
+    return render_template('gongchengzhanshi/fangwujianzhu.html')
